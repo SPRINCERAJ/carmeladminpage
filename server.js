@@ -11,7 +11,7 @@ const app = express();
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: 'PRINCE',
+  password: 'CaptureZion20205#',
   database: 'carmelorg_jethroDB',
   port: 3306,
   connectTimeout: 10000,
