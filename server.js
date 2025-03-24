@@ -69,7 +69,7 @@ app.get('/family-offerings/:familyid/:start_date/:end_date', async (req, res) =>
             type AS offering_type,
             SUM(amount) AS total_offering
           FROM 
-            OFFERING
+            Offering
           WHERE 
             date BETWEEN ? AND ?  -- Use start_date and end_date for the filter
           GROUP BY personid, type
@@ -293,7 +293,7 @@ app.get('/offerings/:start_date/:end_date', async (req, res) => {
             type AS offering_type,
             SUM(amount) AS total_offering
           FROM 
-            OFFERING
+            Offering
           WHERE 
             date BETWEEN ? AND ?  
           GROUP BY personid, type
@@ -322,7 +322,7 @@ app.get('/offerings/:start_date/:end_date', async (req, res) => {
         FROM 
           _person p
         LEFT JOIN 
-          offering op ON p.id = op.personid
+          Offering op ON p.id = op.personid
         WHERE 
           p.familyid = ? 
           AND op.date BETWEEN ? AND ?
